@@ -9,48 +9,56 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.alquran.model.AyatModel.VersesItem;
+import com.example.alquran.model.Terjemahan.TranslationsItem;
 
 import java.util.List;
 
-public class AdapterAyats  extends RecyclerView.Adapter<AdapterAyats.AyatViewHolder> {
-    private List<VersesItem> results;
+public class AdapterAyats  extends RecyclerView.Adapter<AdapterAyats.ViewHolder> {
+    private List<VersesItem> list1;
 
-    public AdapterAyats(List<VersesItem> results) {
-        this.results = results;
+    private static List<TranslationsItem> list2;
+
+    public AdapterAyats(List<VersesItem> list1, List<TranslationsItem> list2){
+        this.list1 = list1;
+        this.list2 = list2;
     }
-
     @NonNull
     @Override
-    public AdapterAyats.AyatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new AyatViewHolder(
+    public AdapterAyats.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ViewHolder(
                 LayoutInflater.from(parent.getContext()).inflate(R.layout.ayat, parent, false)
         );
     }
-
     @Override
-    public void onBindViewHolder(@NonNull AdapterAyats.AyatViewHolder holder, int position) {
-        VersesItem result = results.get(position);
+    public void onBindViewHolder(@NonNull AdapterAyats.ViewHolder holder, int position) {
+        VersesItem list = list1.get(position);
+        TranslationsItem list_ = list2.get(position);
 
-        holder.textViewAyat.setText(result.getTextUthmani());
-
+        holder.textViewAyat.setText(list.getTextUthmani());
+        holder.textViewTerjemahanAyat.setText(list_.getText());
+        holder.textViewNomorAyat.setText(String.valueOf(position + 1));
     }
-
     @Override
     public int getItemCount() {
-        return results.size();
+        return list2.size();
     }
 
-    public class AyatViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewAyat;
-        public AyatViewHolder(@NonNull View itemView) {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView textViewAyat, textViewNomorAyat, textViewTerjemahanAyat;
+
+        public ViewHolder(View itemView){
             super(itemView);
+
             textViewAyat = itemView.findViewById(R.id.Ayat);
+            textViewNomorAyat = itemView.findViewById(R.id.NomorAyat);
+            textViewTerjemahanAyat = itemView.findViewById(R.id.TerjemahanAyat);
         }
     }
-
-    public void setData(List<VersesItem> data){
-        results.clear();
-        results.addAll(data);
+    public void setData(List<VersesItem> data, List<TranslationsItem> data1) {
+        list1.clear();
+        list1.addAll(data);
+        list2.clear();
+        list2.addAll(data1);
         notifyDataSetChanged();
     }
 

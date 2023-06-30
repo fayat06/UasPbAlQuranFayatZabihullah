@@ -22,7 +22,7 @@ public class Verses {
     @Override
     public String toString(){
         return
-                "Response{" +
+                "Verses{" +
                         "meta = '" + meta + '\'' +
                         ",verses = '" + verses + '\'' +
                         "}";

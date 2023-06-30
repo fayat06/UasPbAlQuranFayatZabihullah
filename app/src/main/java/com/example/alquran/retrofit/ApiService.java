@@ -5,10 +5,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiService {
     private static String BASE_URL = "https://api.quran.com/api/v4/";
-    public static Retrofit retrofit;
+    private static Retrofit retrofit;
 
     public static ApiEndPoint endPoint(){
-        Retrofit retrofit = new Retrofit.Builder()
+        retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

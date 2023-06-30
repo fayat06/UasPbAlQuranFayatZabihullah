@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class Meta {
     @SerializedName("filters")
-    private Fillters filters;
+    private Filters filters;
 
-    public Fillters getFilters(){
+    public Filters getFilters(){
         return filters;
     }
 

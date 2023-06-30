@@ -35,100 +35,43 @@ public class ChaptersItem{
 	@SerializedName("revelation_place")
 	private String revelationPlace;
 
-	public void setPages(List<Integer> pages){
-		this.pages = pages;
-	}
-
 	public List<Integer> getPages(){
 		return pages;
-	}
-
-	public void setNameComplex(String nameComplex){
-		this.nameComplex = nameComplex;
 	}
 
 	public String getNameComplex(){
 		return nameComplex;
 	}
 
-	public void setTranslatedName(TranslatedName translatedName){
-		this.translatedName = translatedName;
-	}
-
 	public TranslatedName getTranslatedName(){
 		return translatedName;
-	}
-
-	public void setBismillahPre(boolean bismillahPre){
-		this.bismillahPre = bismillahPre;
 	}
 
 	public boolean isBismillahPre(){
 		return bismillahPre;
 	}
 
-	public void setRevelationOrder(int revelationOrder){
-		this.revelationOrder = revelationOrder;
-	}
-
 	public int getRevelationOrder(){
 		return revelationOrder;
-	}
-
-	public void setVersesCount(int versesCount){
-		this.versesCount = versesCount;
 	}
 
 	public int getVersesCount(){
 		return versesCount;
 	}
 
-	public void setId(int id){
-		this.id = id;
-	}
-
 	public int getId(){
 		return id;
-	}
-
-	public void setNameSimple(String nameSimple){
-		this.nameSimple = nameSimple;
 	}
 
 	public String getNameSimple(){
 		return nameSimple;
 	}
 
-	public void setNameArabic(String nameArabic){
-		this.nameArabic = nameArabic;
-	}
-
 	public String getNameArabic(){
 		return nameArabic;
 	}
 
-	public void setRevelationPlace(String revelationPlace){
-		this.revelationPlace = revelationPlace;
-	}
-
 	public String getRevelationPlace(){
 		return revelationPlace;
-	}
-
-	@Override
-	public String toString(){
-		return
-				"ChaptersItem{" +
-						"pages = '" + pages + '\'' +
-						",name_complex = '" + nameComplex + '\'' +
-						",translated_name = '" + translatedName + '\'' +
-						",bismillah_pre = '" + bismillahPre + '\'' +
-						",revelation_order = '" + revelationOrder + '\'' +
-						",verses_count = '" + versesCount + '\'' +
-						",id = '" + id + '\'' +
-						",name_simple = '" + nameSimple + '\'' +
-						",name_arabic = '" + nameArabic + '\'' +
-						",revelation_place = '" + revelationPlace + '\'' +
-						"}";
 	}
 }
